@@ -6,13 +6,13 @@ from PublishResult import PublishResult
 
 import time
 
-global_data = ['ho chi minh', '', '', False, False]  # [city, temp, humanity, current status  , status change ]
+global_data = ['ho chi minh', 0 , 0, False, False]  # [city, temp, humanity, current status  , status change ]
 
 scheduler = Scheduler()
 scheduler.SCH_Init()
 
 taskOpenWeather = OpenWeather(global_data)
-irrigation_system = IrrigationSystem(global_data[0], global_data[3], global_data[4])
+irrigation_system = IrrigationSystem(global_data)
 getHumidityByLocation = GetHumidityByLocation(global_data)
 publishResult = PublishResult(global_data)
 
